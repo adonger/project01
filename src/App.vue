@@ -18,5 +18,6 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style scopen>
+@import "@/assets/css/base.css";
 </style>
