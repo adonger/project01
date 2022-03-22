@@ -1,6 +1,6 @@
 <template>
   <div class="Home">
-    <van-nav-bar title="首页" />
+    <van-nav-bar title="首页" fixed="true" placeholder="true" />
     <van-swipe
       class="my-swipe"
       :autoplay="3000"
@@ -14,7 +14,11 @@
         </a>
       </van-swipe-item>
     </van-swipe>
-    <RecommendView :c_recommend="this.recommend"></RecommendView>
+    <RecommendView
+      :c_recommend="this.recommend"
+      :c_windowWidth="this.windowWidth"
+    ></RecommendView>
+    <FeatureView></FeatureView>
   </div>
 </template>
 
@@ -23,6 +27,7 @@ import { getHomeMutilData } from "@/network/home.js";
 import { getWindowSize } from "@/API/common/getWindowSize.js";
 
 import RecommendView from "./childComps/RecommendView.vue";
+import FeatureView from "./childComps/FeatureView.vue";
 
 export default {
   name: "Home",
@@ -53,6 +58,7 @@ export default {
   },
   components: {
     RecommendView,
+    FeatureView,
   },
 };
 </script>

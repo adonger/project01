@@ -7,7 +7,12 @@
         :key="item.sort"
       >
         <a :href="item.link">
-          <van-image round width="8rem" height="8rem" :src="item.image" />
+          <van-image
+            round
+            :width="c_windowWidth / 75 + 'rem'"
+            :height="c_windowWidth / 75 + 'rem'"
+            :src="item.image"
+          />
           <p>{{ item.title }}</p>
         </a>
       </van-col>
@@ -22,6 +27,10 @@ export default {
     c_recommend: {
       type: Array,
       default: [],
+    },
+    c_windowWidth: {
+      type: Number,
+      default: 400,
     },
   },
   data() {
